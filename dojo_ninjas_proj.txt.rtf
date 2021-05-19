@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red202\green202\blue202;\red23\green23\blue23;
+\red140\green211\blue254;\red67\green192\blue160;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c83137\c83137\c83137;\cssrgb\c11765\c11765\c11765;
+\cssrgb\c61176\c86275\c99608;\cssrgb\c30588\c78824\c69020;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Dojo and Ninja (shell)\
+\
+Create 3 dojos\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 Dojo.objects.create(name='', city='', state=\'91\'92)\
+\
+Delete 3 dojos\
+Dojo.objects.all().delete()\
+\
+Create 3 more Dojos \
+Dojo.objects.create(name='', city='', state=\'91\'92)\
+\
+>>>east_bay = Dojo.objects.get(id=5)\
+>>> midwest = Dojo.objects.get(id=6)\
+>>> east_coast=Dojo.objects.get(id=7)\
+\
+Create 3 Ninjas at first, second, third dojo.\
+ Ninja.objects.create(first_name='Sam', last_name='Smith', dojo_id=)\
+\
+Retrieve all the ninjas from the first Dojo.\
+ east_bay.all_students.all()s\
+\
+Retrieve all the ninjas from the last Dojo.\
+east_coast.all_students.all()\
+\
+Retrieve the last ninja\'92s dojo\
+last_ninja = Ninja.objects.last()\
+print(last_ninja.dojo_id.name)\
+\
+Add a new text field called desc to Dojo class. \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\fs24 \cf3 \cb4 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec3  \cf5 \strokec5 desc\cf3 \strokec3 =\cf6 \strokec6 models\cf3 \strokec3 .\cf6 \strokec6 TextField\cf3 \strokec3 ()\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf2 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 \
+Create a new dojo\
+\
+from dojo_ninjas_app.models import *\
+>>> Dojo.objects.create(name='gulf_coast', city='Houston', state='TX', desc='newest Dojo in the Coding Dojo family.')\
+\
+\
+\
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos and Ninjas</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'style.css' %}">
+</head>
+<body>
+    <div id='wrapper'>
+        <div class='form_section'>
+            <h1>Add a Dojo</h1>
+            <form action='/create_dojo' method='POST'>
+                {% csrf_token%}
+                <label>Name</label>
+                <input type='text' name='name'><br>
+                <label>City</label>
+                <input type='text' name='city'><br>
+                <label>State</label>
+                <input type='text' name='state'><br>
+                <input type='submit' class ='add_button' value='Add'>
+            </form>
+        </div>
+        <div class='form_section'>
+            <h1>Add a Ninja</h1>
+            {% csrf_token %}
+            <form action='/create_ninja' method='POST'>
+                {% csrf_token %}
+                <label>First Name</label>
+                <input type='text' name='first_name'><br>
+                <label>Last Name</label>
+                <input type='text' name='last_name'><br>
+                <label>Dojo</label>
+                <select name='dojo'>
+                    {% for dojo in dojos %}
+                    <option value='{{dojo.id}}'>{{dojo.name}} Dojo</option>
+                    {% endfor %}
+                </select><br>
+                <input type='hidden' name='desc'>
+                <input type='submit' class='add_button' value='Add'>
+            </form>
+        </div>
+        <div id='display_dojos'>
+            <h1>All the Dojos</h1>
+            {% for dojo in dojos  %}
+            <h3>Ninjas at the {{dojo.name}} Dojo</h3>
+            <p> - {{dojo.all_students.count}}</p>
+            <a href="/delete/{{dojo.id}}">Delete</a>
+            <ul>
+                {% for ninja in dojo.all_students.all %}
+                <li>{{ninja.first_name}} {{ninja.last_name}}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

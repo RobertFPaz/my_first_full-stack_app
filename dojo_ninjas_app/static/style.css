@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+#wrapper {
+    width: 900px;
+    margin: 0 auto;
+    background-image: linear-gradient(#164df2, #55575a);
+    padding: 20px;
+}
+.form_section {
+    width: 340px;
+    display: inline-block;
+    margin-left: 90px;
+    margin-bottom: 20px;
+}
+h1 {
+    margin-left: 50px;
+    padding-bottom: 10px;
+}
+label {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 10px;
+    
+}
+input, select {
+    color: black;
+}
+select{
+    width: 181px;
+}
+.add_button {
+     background-color: #55575a;
+     padding: 5px 10px;
+     color: white;
+}
+#display_dojos{
+    border-top: 3px solid white;
+    width: 800px;
+    margin: 0 auto; 
+    padding-top: 20px;
+    
+}
+#display_dojos h1 {
+    margin-left: 300px;
+}
+h3 {
+    margin-left: 255px;
+    display: inline-block;
+    font-weight: bolder;
+    width: 270px;
+}
+p {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+ul {
+    margin-left: 315px;
+    margin-bottom: 10px;
+}
